@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.util.Arrays;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 
 public class Calculator {
     int boardWidth = 400;
@@ -57,7 +58,8 @@ public class Calculator {
             button.setText(buttonValue);
             button.setFocusable(false);
             button.setOpaque(true);
-            button.setBorderPainted(false);
+            button.setBorderPainted(true);
+            button.setBorder(new LineBorder(customLightGrey, 2));
             if(Arrays.asList(topSymbols).contains(buttonValue)){
                 button.setBackground(customLightGrey);
                 button.setForeground(customBlack);
