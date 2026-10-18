@@ -83,6 +83,8 @@ public class Calculator {
                     JButton button = (JButton) e.getSource();
                     String buttonValue = button.getText();
                     if (Arrays.asList(rightSymbols).contains(buttonValue)){
+                        
+                    }else if (Arrays.asList(topSymbols).contains(buttonValue)){
                         if ("AC".equals(buttonValue)){
                             clearAll();
                             displayLabel.setText("0");
@@ -94,27 +96,22 @@ public class Calculator {
                             double numDisplay = Double.parseDouble(displayLabel.getText());
                             numDisplay /= 100;
                             displayLabel.setText(removeZeroDecimal(numDisplay));
-                        }
-
-                    }else if (Arrays.asList(topSymbols).contains(buttonValue)){
-
-                    }else { // digits or .
-                        if (".".equals(buttonValue)){
-                            if(!displayLabel.getText().contains(buttonValue)){
-                                displayLabel.setText(displayLabel.getText() + buttonValue);
-                            }
-
-                        }else if ("0123456789".contains(buttonValue)){
-                            if ("0".equals(displayLabel.getText())){
-                                displayLabel.setText(buttonValue);
-                            }else{
-                                displayLabel.setText(displayLabel.getText() + buttonValue);
-                            }
+                        }else { // digits or .
+                            if (".".equals(buttonValue)){
+                                if(!displayLabel.getText().contains(buttonValue)){
+                                    displayLabel.setText(displayLabel.getText() + buttonValue);
+                                }
+                            }else if ("0123456789".contains(buttonValue)){
+                                if ("0".equals(displayLabel.getText())){
+                                    displayLabel.setText(buttonValue);
+                                }else{
+                                    displayLabel.setText(displayLabel.getText() + buttonValue);
+                                }
                         } 
+                        }
                     }
                 }
             });
-
         }
     }
 
