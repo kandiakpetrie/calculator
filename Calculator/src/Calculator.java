@@ -96,19 +96,19 @@ public class Calculator {
                             double numDisplay = Double.parseDouble(displayLabel.getText());
                             numDisplay /= 100;
                             displayLabel.setText(removeZeroDecimal(numDisplay));
-                        }else { // digits or .
-                            if (".".equals(buttonValue)){
-                                if(!displayLabel.getText().contains(buttonValue)){
-                                    displayLabel.setText(displayLabel.getText() + buttonValue);
-                                }
-                            }else if ("0123456789".contains(buttonValue)){
-                                if ("0".equals(displayLabel.getText())){
-                                    displayLabel.setText(buttonValue);
-                                }else{
-                                    displayLabel.setText(displayLabel.getText() + buttonValue);
-                                }
-                        } 
                         }
+                    } else { // digits or .
+                        if (".".equals(buttonValue)){
+                            if(!displayLabel.getText().contains(buttonValue)){
+                                    displayLabel.setText(displayLabel.getText() + buttonValue);
+                                }
+                        }else if ("0123456789".contains(buttonValue)){
+                            if ("0".equals(displayLabel.getText())){
+                                displayLabel.setText(buttonValue);
+                            }else{
+                                displayLabel.setText(displayLabel.getText() + buttonValue);
+                            }
+                        } 
                     }
                 }
             });
