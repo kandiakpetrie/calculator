@@ -59,7 +59,7 @@ public class Calculator {
             button.setFocusable(false);
             button.setOpaque(true);
             button.setBorderPainted(true);
-            button.setBorder(new LineBorder(customLightGrey, 1));
+            button.setBorder(new LineBorder(customBlack, 1));
             if(Arrays.asList(topSymbols).contains(buttonValue)){
                 button.setBackground(customLightGrey);
                 button.setForeground(customBlack);
